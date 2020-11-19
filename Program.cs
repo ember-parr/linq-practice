@@ -118,7 +118,7 @@ namespace linq
 
                 Ref: https://msdn.microsoft.com/en-us/library/system.math.sqrt(v=vs.110).aspx
             */
-            List<int> stopAtSquare = wheresSquaredo.TakeWhile(num => !(Math.Sqrt(num) % 2 == 0)).ToList();
+            List<int> stopAtSquare = wheresSquaredo.TakeWhile(num => !(Math.Sqrt(num) % 1 == 0)).ToList();
             Console.WriteLine("Stop at perfect square: ");
             foreach (int number in stopAtSquare)
             {
