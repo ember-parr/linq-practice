@@ -153,6 +153,8 @@ namespace linq
             {
                 Console.Write($"{customer.Name}, ");
             }
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
 
             /*
                 Given the same customer set, display how many millionaires per bank.
@@ -164,8 +166,23 @@ namespace linq
                 FTB 1
                 CITI 1
             */
+            // int results = customers.GroupBy(
+            //     c => customers,
 
+            //     (key, g) => key = g.Count() 
+            // );
+            // Console.WriteLine($"results count: {results}");
+            int wfCustomers = customers.Where(customer => customer.Bank == "WF" && customer.Balance >= 1e6).Count();
+            Console.WriteLine($"WF: {wfCustomers}");
 
+            int boaCustomers = customers.Where(customer => customer.Bank == "BOA" && customer.Balance >= 1e6).Count();
+            Console.WriteLine($"BOA: {boaCustomers}");
+
+            int ftbCustomers = customers.Where(customer => customer.Bank == "FTB" && customer.Balance >= 1e6).Count();
+            Console.WriteLine($"FTB: {ftbCustomers}");
+
+            int citiCustomers = customers.Where(customer => customer.Bank == "CITI" && customer.Balance >= 1e6).Count();
+            Console.WriteLine($"CITI: {citiCustomers}");
 
 
 
