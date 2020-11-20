@@ -166,23 +166,24 @@ namespace linq
                 FTB 1
                 CITI 1
             */
-            // int results = customers.GroupBy(
-            //     c => customers,
+            Console.WriteLine("Number of millionaire customers in each bank:");
+            millionaires.GroupBy(customer => customer.Bank)
+                .ToList()
+                .ForEach(group =>
+                {
+                    Console.WriteLine($"{group.Key} {group.Count()}");
+                });
+            // int wfCustomers = customers.Where(customer => customer.Bank == "WF" && customer.Balance >= 1e6).Count();
+            // Console.WriteLine($"WF: {wfCustomers}");
 
-            //     (key, g) => key = g.Count() 
-            // );
-            // Console.WriteLine($"results count: {results}");
-            int wfCustomers = customers.Where(customer => customer.Bank == "WF" && customer.Balance >= 1e6).Count();
-            Console.WriteLine($"WF: {wfCustomers}");
+            // int boaCustomers = customers.Where(customer => customer.Bank == "BOA" && customer.Balance >= 1e6).Count();
+            // Console.WriteLine($"BOA: {boaCustomers}");
 
-            int boaCustomers = customers.Where(customer => customer.Bank == "BOA" && customer.Balance >= 1e6).Count();
-            Console.WriteLine($"BOA: {boaCustomers}");
+            // int ftbCustomers = customers.Where(customer => customer.Bank == "FTB" && customer.Balance >= 1e6).Count();
+            // Console.WriteLine($"FTB: {ftbCustomers}");
 
-            int ftbCustomers = customers.Where(customer => customer.Bank == "FTB" && customer.Balance >= 1e6).Count();
-            Console.WriteLine($"FTB: {ftbCustomers}");
-
-            int citiCustomers = customers.Where(customer => customer.Bank == "CITI" && customer.Balance >= 1e6).Count();
-            Console.WriteLine($"CITI: {citiCustomers}");
+            // int citiCustomers = customers.Where(customer => customer.Bank == "CITI" && customer.Balance >= 1e6).Count();
+            // Console.WriteLine($"CITI: {citiCustomers}");
 
 
 
